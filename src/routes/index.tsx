@@ -32,8 +32,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const CHECKOUT_URL =
-  "https://pay.hotmart.com/H96590288D?off=rvqi7wdv&checkoutMode=10&hotfeature=51";
+const CHECKOUT_URL = "https://go.hotmart.com/Q106494710B?ap=c22b";
 
 const IMG = {
   cover: coverImg,
