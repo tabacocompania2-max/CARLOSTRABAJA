@@ -1,24 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import coverImg from "@/assets/ebook-cover.jpg";
-import pattern1 from "@/assets/pattern-1.jpg";
-import pattern2 from "@/assets/pattern-2.jpg";
-import pattern3 from "@/assets/pattern-3.jpg";
-import pattern4 from "@/assets/pattern-4.jpg";
-import devicesImg from "@/assets/devices.jpg";
-import badgeEmail from "@/assets/badge-email.png";
-import badgeLifetime from "@/assets/badge-lifetime.png";
+import coverImg from "@/assets/ebook-cover.webp";
+import pattern1 from "@/assets/pattern-1.webp";
+import pattern2 from "@/assets/pattern-2.webp";
+import pattern3 from "@/assets/pattern-3.webp";
+import pattern4 from "@/assets/pattern-4.webp";
+import devicesImg from "@/assets/devices.webp";
+import badgeEmail from "@/assets/badge-email.webp";
+import badgeLifetime from "@/assets/badge-lifetime.webp";
 import insideVideo from "@/assets/por-dentro.mp4";
-import testimonialsImg from "@/assets/testimonials.jpg";
-import bonus1 from "@/assets/bonus-1.jpg";
-import bonus2 from "@/assets/bonus-2.jpg";
-import bonus3 from "@/assets/bonus-3.jpg";
-import offerBookImg from "@/assets/offer-book.jpg";
-import paymentsImg from "@/assets/payments.jpg";
-import more1 from "@/assets/more-1.jpg";
-import more2 from "@/assets/more-2.jpg";
-import more3 from "@/assets/more-3.jpg";
-import more4 from "@/assets/more-4.jpg";
+import testimonialsImg from "@/assets/testimonials.webp";
+import bonus1 from "@/assets/bonus-1.webp";
+import bonus2 from "@/assets/bonus-2.webp";
+import bonus3 from "@/assets/bonus-3.webp";
+import offerBookImg from "@/assets/offer-book.webp";
+import paymentsImg from "@/assets/payments.webp";
+import more1 from "@/assets/more-1.webp";
+import more2 from "@/assets/more-2.webp";
+import more3 from "@/assets/more-3.webp";
+import more4 from "@/assets/more-4.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
