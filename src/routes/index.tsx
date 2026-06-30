@@ -277,8 +277,24 @@ function Index() {
         </h3>
         <p className="text-center text-[#7a1e1e] font-semibold mb-10 mt-3">Reseñas verificadas de compradoras reales ✅</p>
 
+        {/* Facebook screenshot cards - FIRST for maximum trust */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+          <div className="bg-white rounded-2xl overflow-hidden shadow-md">
+            <img src={testiFacebook1} alt="Testimonio Giselle Campos en Facebook" className="w-full" loading="lazy" decoding="async" />
+            <div className="px-4 py-2 flex justify-end">
+              <span className="text-[10px] font-semibold bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">✔ Facebook</span>
+            </div>
+          </div>
+          <div className="bg-white rounded-2xl overflow-hidden shadow-md">
+            <img src={testiFacebook2} alt="Testimonio Raquel García en Facebook" className="w-full" loading="lazy" decoding="async" />
+            <div className="px-4 py-2 flex justify-end">
+              <span className="text-[10px] font-semibold bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">✔ Facebook</span>
+            </div>
+          </div>
+        </div>
+
         {/* Hotmart review cards */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-4">
           {[
             { name: "Rita", text: "Emprendo con el tejido hace muchos años y estos patrones no se consiguen y mucho menos a un precio tan accesible. La lectura es sencilla y tiene mucho apoyo gráfico. ¡Soy feliz! ❤️" },
             { name: "Elvira", text: "Me encantó el ebook, muy claro, fácil de entender y los amigurumis quedan preciosos, lo recomiendo 💯" },
@@ -295,22 +311,6 @@ function Index() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Facebook screenshot cards */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5 mb-4">
-          <div className="bg-white rounded-2xl overflow-hidden shadow-md">
-            <img src={testiFacebook1} alt="Testimonio Giselle Campos en Facebook" className="w-full" loading="lazy" decoding="async" />
-            <div className="px-4 py-2 flex justify-end">
-              <span className="text-[10px] font-semibold bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">✔ Facebook</span>
-            </div>
-          </div>
-          <div className="bg-white rounded-2xl overflow-hidden shadow-md">
-            <img src={testiFacebook2} alt="Testimonio Raquel García en Facebook" className="w-full" loading="lazy" decoding="async" />
-            <div className="px-4 py-2 flex justify-end">
-              <span className="text-[10px] font-semibold bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">✔ Facebook</span>
-            </div>
-          </div>
         </div>
       </section>
 
