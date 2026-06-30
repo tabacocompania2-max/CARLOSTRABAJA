@@ -10,6 +10,8 @@ import badgeEmail from "@/assets/badge-email.webp";
 import badgeLifetime from "@/assets/badge-lifetime.webp";
 import insideVideo from "@/assets/por-dentro.mp4";
 import testimonialsImg from "@/assets/testimonials.webp";
+import testiFacebook1 from "@/assets/testi-facebook-1.jpg";
+import testiFacebook2 from "@/assets/testi-facebook-2.jpg";
 import bonus1 from "@/assets/bonus-1.webp";
 import bonus2 from "@/assets/bonus-2.webp";
 import bonus3 from "@/assets/bonus-3.webp";
@@ -268,22 +270,47 @@ function Index() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section
-        className="py-14 px-6"
-        style={{ backgroundColor: "#fce6dd" }}
-      >
-        <h3 className="text-center text-2xl md:text-4xl font-extrabold text-white mb-10 max-w-4xl mx-auto leading-tight">
-          <span className="bg-[#ee5a8b] px-3 py-1 inline-block">MIRA COMO ELLAS YA ESTÁN</span>
-          <br />
-          <span className="bg-[#ee5a8b] px-3 py-1 inline-block mt-2">CREANDO HERMOSAS</span>
-          <br />
-          <span className="bg-[#ee5a8b] px-3 py-1 inline-block mt-2">
-            MASCOTAS GRACIAS A NUESTRO LIBRO DIGITAL DE PATRONES
-          </span>
+      {/* Testimonials - Rich Cards */}
+      <section className="py-14 px-6" style={{ backgroundColor: "#fce6dd" }}>
+        <h3 className="text-center text-2xl md:text-4xl font-extrabold text-white mb-2 max-w-4xl mx-auto leading-tight">
+          <span className="bg-[#ee5a8b] px-3 py-1 inline-block">MIRA LO QUE DICEN QUIENES YA LO TIENEN</span>
         </h3>
-        <div className="max-w-5xl mx-auto">
-          <img src={IMG.testimonials} alt="Testimonios de clientas" className="w-full" loading="lazy" decoding="async" />
+        <p className="text-center text-[#7a1e1e] font-semibold mb-10 mt-3">Reseñas verificadas de compradoras reales ✅</p>
+
+        {/* Hotmart review cards */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+          {[
+            { name: "Rita", text: "Emprendo con el tejido hace muchos años y estos patrones no se consiguen y mucho menos a un precio tan accesible. La lectura es sencilla y tiene mucho apoyo gráfico. ¡Soy feliz! ❤️" },
+            { name: "Elvira", text: "Me encantó el ebook, muy claro, fácil de entender y los amigurumis quedan preciosos, lo recomiendo 💯" },
+            { name: "Victoria", text: "Este ebook es el que más me gustó de todos, es muy lindo cada patrón y muy bien detallado. ¡Gracias!" },
+            { name: "Jocelyn", text: "Muy bonito, gran contenido muy bien explicado. Se entiende perfecto, el contenido es increíble, ¡me encantó!" },
+            { name: "Sara", text: "Un Ebook super completo, muy bien explicado cada detalle, los patrones que promete están completos. ¡Me encantó esta compra!" },
+          ].map(({ name, text }) => (
+            <div key={name} className="bg-white rounded-2xl p-5 shadow-md flex flex-col gap-3">
+              <div className="flex items-center gap-1 text-yellow-400 text-lg">{'★★★★★'}</div>
+              <p className="text-[#333] text-sm leading-relaxed flex-grow">&ldquo;{text}&rdquo;</p>
+              <div className="flex items-center justify-between mt-2">
+                <span className="font-bold text-[#222] text-sm">{name}</span>
+                <span className="text-[10px] font-semibold bg-orange-100 text-orange-600 px-2 py-0.5 rounded-full">✔ Hotmart</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Facebook screenshot cards */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5 mb-4">
+          <div className="bg-white rounded-2xl overflow-hidden shadow-md">
+            <img src={testiFacebook1} alt="Testimonio Giselle Campos en Facebook" className="w-full" loading="lazy" decoding="async" />
+            <div className="px-4 py-2 flex justify-end">
+              <span className="text-[10px] font-semibold bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">✔ Facebook</span>
+            </div>
+          </div>
+          <div className="bg-white rounded-2xl overflow-hidden shadow-md">
+            <img src={testiFacebook2} alt="Testimonio Raquel García en Facebook" className="w-full" loading="lazy" decoding="async" />
+            <div className="px-4 py-2 flex justify-end">
+              <span className="text-[10px] font-semibold bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">✔ Facebook</span>
+            </div>
+          </div>
         </div>
       </section>
 
