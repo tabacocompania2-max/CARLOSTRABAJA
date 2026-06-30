@@ -12,6 +12,7 @@ import insideVideo from "@/assets/por-dentro.mp4";
 import testimonialsImg from "@/assets/testimonials.webp";
 import testiFacebook1 from "@/assets/testi-facebook-1.jpg";
 import testiFacebook2 from "@/assets/testi-facebook-2.jpg";
+import testiWhatsapp from "@/assets/testi-whatsapp.jpg";
 import bonus1 from "@/assets/bonus-1.webp";
 import bonus2 from "@/assets/bonus-2.webp";
 import bonus3 from "@/assets/bonus-3.webp";
@@ -277,7 +278,12 @@ function Index() {
         </h3>
         <p className="text-center text-[#7a1e1e] font-semibold mb-10 mt-3">Reseñas verificadas de compradoras reales ✅</p>
 
-        {/* Facebook screenshot cards - FIRST for maximum trust */}
+        {/* WhatsApp collage - FIRST and most powerful */}
+        <div className="max-w-5xl mx-auto mb-8">
+          <img src={testiWhatsapp} alt="Clientas mostrando sus amigurumis por WhatsApp" className="w-full rounded-2xl shadow-lg" loading="lazy" decoding="async" />
+        </div>
+
+        {/* Facebook screenshot cards */}
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
           <div className="bg-white rounded-2xl overflow-hidden shadow-md">
             <img src={testiFacebook1} alt="Testimonio Giselle Campos en Facebook" className="w-full" loading="lazy" decoding="async" />
