@@ -176,7 +176,7 @@ function Index() {
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 py-12 md:py-16 grid md:grid-cols-2 gap-10 items-center">
         <div className="flex justify-center">
-          <img src={IMG.cover} alt="eBook Mascotas Amigurumis" className="max-w-sm w-full h-auto" />
+          <img src={IMG.cover} alt="eBook Mascotas Amigurumis" className="max-w-sm w-full h-auto" fetchPriority="high" decoding="async" />
         </div>
         <div>
           <h2
@@ -211,7 +211,7 @@ function Index() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {IMG.patterns.map((src) => (
-            <img key={src} src={src} alt="Patrones amigurumi" className="w-full rounded-2xl" />
+            <img key={src} src={src} alt="Patrones amigurumi" className="w-full rounded-2xl" loading="lazy" decoding="async" />
           ))}
         </div>
       </section>
@@ -225,7 +225,7 @@ function Index() {
           (VISIBLE EN CUALQUIER DISPOSITIVO)
         </p>
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <img src={IMG.devices} alt="Visible en cualquier dispositivo" className="w-full" />
+          <img src={IMG.devices} alt="Visible en cualquier dispositivo" className="w-full" loading="lazy" decoding="async" />
           <div>
             <h4
               className="text-4xl text-[#7c5fb8] mb-4"
@@ -244,8 +244,8 @@ function Index() {
               <li className="pt-2 font-semibold">Y muchas más razas</li>
             </ul>
             <div className="flex flex-col gap-4 mt-8 max-w-sm">
-              <img src={IMG.emailBadge} alt="Entrega por email" className="w-full" />
-              <img src={IMG.lifetimeBadge} alt="Acceso de por vida" className="w-full" />
+              <img src={IMG.emailBadge} alt="Entrega por email" className="w-full" loading="lazy" decoding="async" />
+              <img src={IMG.lifetimeBadge} alt="Acceso de por vida" className="w-full" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -258,7 +258,7 @@ function Index() {
           <video
             src={IMG.insideVideo}
             controls
-            preload="metadata"
+            preload="none"
             playsInline
             className="w-full h-full object-cover"
           />
@@ -283,7 +283,7 @@ function Index() {
           </span>
         </h3>
         <div className="max-w-5xl mx-auto">
-          <img src={IMG.testimonials} alt="Testimonios de clientas" className="w-full" />
+          <img src={IMG.testimonials} alt="Testimonios de clientas" className="w-full" loading="lazy" decoding="async" />
         </div>
       </section>
 
@@ -314,7 +314,7 @@ function Index() {
         <div className="grid md:grid-cols-3 gap-8">
           {IMG.bonuses.map((src, i) => (
             <div key={src} className="text-center">
-              <img src={src} alt={`Bono ${i + 1}`} className="w-full mb-4" />
+              <img src={src} alt={`Bono ${i + 1}`} className="w-full mb-4" loading="lazy" decoding="async" />
               <div className="text-[#7c5fb8] font-extrabold text-xl">BONO {i + 1}</div>
               <div className="text-[#333] mt-1">
                 Pack "
@@ -332,7 +332,7 @@ function Index() {
 
       {/* Offer */}
       <section className="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
-        <img src={IMG.offerBook} alt="Ebook mascotas" className="w-full" />
+        <img src={IMG.offerBook} alt="Ebook mascotas" className="w-full" loading="lazy" decoding="async" />
         <div className="text-center md:text-left">
           <h3 className="text-2xl md:text-3xl font-extrabold text-[#222]">
             RECIBIRÁS TODO ESTO Y MÁS POR
@@ -348,7 +348,7 @@ function Index() {
           <div className="mt-6">
             <CTAButton>¡QUIERO ADQUIRIR EL EBOOK!</CTAButton>
           </div>
-          <img src={IMG.payments} alt="Métodos de pago" className="mt-6 max-w-md w-full mx-auto md:mx-0" />
+          <img src={IMG.payments} alt="Métodos de pago" className="mt-6 max-w-md w-full mx-auto md:mx-0" loading="lazy" decoding="async" />
 
           <div className="mt-10">
             <h4 className="text-center md:text-left text-xl md:text-2xl font-extrabold text-[#222]">
@@ -367,7 +367,7 @@ function Index() {
       <section className="max-w-6xl mx-auto px-6 py-14">
         <div className="grid sm:grid-cols-2 gap-8">
           {IMG.morePatterns.map((src) => (
-            <img key={src} src={src} alt="Más patrones" className="w-full rounded-2xl" />
+            <img key={src} src={src} alt="Más patrones" className="w-full rounded-2xl" loading="lazy" decoding="async" />
           ))}
         </div>
       </section>
@@ -386,6 +386,18 @@ function Index() {
       <footer className="py-8 text-center text-xs text-[#666]">
         © {new Date().getFullYear()} Valenstore · Todos los derechos reservados
       </footer>
+
+      {/* Sticky mobile CTA bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.12)]">
+        <a
+          href={CHECKOUT_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="block w-full text-center bg-[#7ed957] text-white font-extrabold text-base py-3 rounded-full shadow-[0_4px_0_rgba(0,0,0,0.15)] uppercase tracking-wide animate-pulse-cta"
+        >
+          🛒 ¡QUIERO EL EBOOK POR $8 USD!
+        </a>
+      </div>
     </main>
   );
 }
