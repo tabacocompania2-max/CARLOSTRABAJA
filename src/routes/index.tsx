@@ -79,14 +79,21 @@ function CoralBand({ children }: { children: React.ReactNode }) {
 
 function CTAButton({ children }: { children: React.ReactNode }) {
   return (
-    <a
-      href={CHECKOUT_URL}
-      target="_blank"
-      rel="noreferrer"
-      className="inline-block bg-[#7ed957] hover:bg-[#6dc847] transition-colors text-white font-extrabold text-lg md:text-xl px-10 py-4 rounded-full shadow-[0_6px_0_rgba(0,0,0,0.12)] uppercase tracking-wide text-center"
-    >
-      {children}
-    </a>
+    <div className="flex flex-col items-center gap-3">
+      <a
+        href={CHECKOUT_URL}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-block bg-[#7ed957] hover:bg-[#6dc847] transition-colors text-white font-extrabold text-lg md:text-xl px-10 py-4 rounded-full shadow-[0_6px_0_rgba(0,0,0,0.12)] uppercase tracking-wide text-center animate-pulse-cta"
+      >
+        {children}
+      </a>
+      <p className="text-xs text-gray-600 font-medium flex items-center justify-center gap-1.5">
+        <span>🔒 Pago 100% seguro y encriptado</span>
+        <span>•</span>
+        <span>🛡️ Garantía de 7 días</span>
+      </p>
+    </div>
   );
 }
 
@@ -277,6 +284,23 @@ function Index() {
         </h3>
         <div className="max-w-5xl mx-auto">
           <img src={IMG.testimonials} alt="Testimonios de clientas" className="w-full" />
+        </div>
+      </section>
+
+      {/* Guarantee Section */}
+      <section className="bg-white py-12 px-6 border-y border-[#fce6dd]">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-shrink-0 w-28 h-28 bg-[#f4a08c]/15 rounded-full flex items-center justify-center text-5xl">
+            🛡️
+          </div>
+          <div>
+            <h3 className="text-2xl font-extrabold text-[#7a1e1e] mb-2">
+              Garantía de Satisfacción de 7 Días
+            </h3>
+            <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+              Queremos que compres con total tranquilidad. Prueba el ebook de patrones hoy mismo. Si en los primeros 7 días sientes que no cumple con tus expectativas, puedes solicitar el reembolso del 100% de tu dinero directamente en la plataforma. Sin preguntas ni complicaciones. ¡Tu inversión está totalmente protegida!
+            </p>
+          </div>
         </div>
       </section>
 
