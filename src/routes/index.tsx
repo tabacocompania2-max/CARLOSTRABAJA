@@ -176,6 +176,15 @@ function Index() {
         ¡CREA ADORABLES MASCOTAS DE AMIGURUMI CON MÁS DE 60 PATRONES EXCLUSIVOS!
       </CoralBand>
 
+      {/* Social proof bar */}
+      <div className="bg-white border-b border-[#f4a08c]/40 py-3 px-4">
+        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-semibold text-[#555]">
+          <span>⭐⭐⭐⭐⭐ <span className="text-[#7a1e1e]">+500 compradoras satisfechas</span></span>
+          <span>🇪🇸 Disponible en todo Latinoamérica</span>
+          <span>📦 Entrega inmediata por email</span>
+        </div>
+      </div>
+
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 py-12 md:py-16 grid md:grid-cols-2 gap-10 items-center">
         <div className="flex justify-center">
@@ -189,19 +198,28 @@ function Index() {
             Patrones Exclusivos
           </h2>
           <ul className="space-y-3 text-[#333] text-base md:text-lg">
-            <li>¿Quieres personalizar hermosos amigurumis de mascotas?</li>
-            <li>¿Buscas para tu emprendimiento patrones fuera de lo común?</li>
-            <li>¿Quieres encontrar patrones con explicaciones claras y en español?</li>
+            <li>✅ Más de <strong>60 patrones de mascotas</strong> completamente en español</li>
+            <li>✅ Instrucciones <strong>claras y detalladas</strong> con apoyo gráfico paso a paso</li>
+            <li>✅ Perfectos para <strong>emprendedoras</strong> que quieren diseños únicos y rentables</li>
+            <li>✅ Acceso <strong>inmediato y de por vida</strong> desde cualquier dispositivo</li>
           </ul>
-          <p className="mt-6 text-center md:text-left text-[#222] font-semibold leading-relaxed">
-            Con nuestro{" "}
-            <span className="text-[#e63946] font-bold">
-              ebook de más de 60 patrones de mascotas en ESPAÑOL
-            </span>
-            , llevaras tu emprendimiento a otro nivel creando diseños{" "}
-            <span className="text-[#e63946] font-bold">personalizados y encantadores</span> que
-            cautivaran a tus clientes
-          </p>
+
+          {/* Price anchor in hero */}
+          <div className="mt-6 flex items-center gap-4">
+            <div className="text-center">
+              <div className="text-lg text-[#999] line-through font-bold">$27.00 USD</div>
+              <div className="text-4xl font-extrabold text-[#7ed957]">$8.00 USD</div>
+              <div className="text-xs text-[#555] mt-1">ÚNICO PAGO · ACCESO INMEDIATO</div>
+            </div>
+            <div className="flex-1">
+              <CTAButton>¡QUIERO MIS PATRONES AHORA!</CTAButton>
+            </div>
+          </div>
+
+          {/* Mini urgency */}
+          <div className="mt-4 bg-[#fff3cd] border border-[#ffc107] rounded-xl px-4 py-2 text-center">
+            <span className="text-sm font-bold text-[#7a5c00]">⏰ Oferta por tiempo limitado — <span className="text-[#e63946]">70% de descuento activo ahora</span></span>
+          </div>
         </div>
       </section>
 
