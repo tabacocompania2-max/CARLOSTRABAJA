@@ -144,6 +144,73 @@ function Countdown() {
   );
 }
 
+const FOMO_MESSAGES = [
+  { icon: "🛒", text: "Valentina de Colombia acaba de adquirir este ebook" },
+  { icon: "👀", text: "23 personas están viendo esta página ahora mismo" },
+  { icon: "⭐", text: "Mariana de México acaba de comprar y dejó 5 estrellas" },
+  { icon: "🔥", text: "142 personas se han interesado en este producto hoy" },
+  { icon: "🛒", text: "Lucía de Argentina acaba de adquirir este ebook" },
+  { icon: "⚡", text: "Quedan pocas unidades al precio de descuento" },
+  { icon: "👀", text: "31 personas están viendo esta oferta en este momento" },
+  { icon: "🛒", text: "Gabriela de Perú acabó de comprar hace 2 minutos" },
+  { icon: "🔥", text: "87 emprendedoras ya se unieron hoy" },
+  { icon: "🛒", text: "Daniela de Chile acaba de adquirir este ebook" },
+];
+
+function FomoNotification() {
+  const [visible, setVisible] = useState(false);
+  const [idx, setIdx] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  useEffect(() => {
+    // First notification after 4s
+    const firstTimer = setTimeout(() => showNext(0), 4000);
+    return () => clearTimeout(firstTimer);
+  }, []);
+
+  function showNext(i: number) {
+    setIdx(i);
+    setAnimating(true);
+    setVisible(true);
+    // Hide after 4.5s
+    setTimeout(() => {
+      setAnimating(false);
+      setTimeout(() => {
+        setVisible(false);
+        // Show next after 5s gap
+        const next = (i + 1) % FOMO_MESSAGES.length;
+        setTimeout(() => showNext(next), 5000);
+      }, 400);
+    }, 4500);
+  }
+
+  if (!visible) return null;
+
+  const msg = FOMO_MESSAGES[idx];
+  return (
+    <div
+      style={{
+        position: "fixed",
+        bottom: "80px",
+        left: "16px",
+        zIndex: 9999,
+        transform: animating ? "translateX(0)" : "translateX(-120%)",
+        opacity: animating ? 1 : 0,
+        transition: "transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.4s ease",
+        maxWidth: "300px",
+      }}
+    >
+      <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.15)] border border-gray-100 px-4 py-3 flex items-center gap-3">
+        <div className="text-2xl flex-shrink-0">{msg.icon}</div>
+        <div>
+          <p className="text-xs font-semibold text-[#222] leading-snug">{msg.text}</p>
+          <p className="text-[10px] text-gray-400 mt-0.5">hace unos momentos</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
@@ -171,6 +238,7 @@ function Index() {
       className="min-h-screen w-full"
       style={{ fontFamily: "Montserrat, system-ui, sans-serif", backgroundColor: "#fdf3ef" }}
     >
+      <FomoNotification />
       {/* Top hero band */}
       <CoralBand>
         ¡CREA ADORABLES MASCOTAS DE AMIGURUMI CON MÁS DE 60 PATRONES EXCLUSIVOS!
