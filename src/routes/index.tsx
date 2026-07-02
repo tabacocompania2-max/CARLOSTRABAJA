@@ -181,8 +181,8 @@ function FomoNotification() {
   const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
-    // First notification after 4s
-    const firstTimer = setTimeout(() => showNext(0), 4000);
+    // First notification after 12s (user has time to start reading first)
+    const firstTimer = setTimeout(() => showNext(0), 12000);
     return () => clearTimeout(firstTimer);
   }, []);
 
@@ -190,16 +190,16 @@ function FomoNotification() {
     setIdx(i);
     setAnimating(true);
     setVisible(true);
-    // Hide after 4.5s
+    // Stay visible 5s
     setTimeout(() => {
       setAnimating(false);
       setTimeout(() => {
         setVisible(false);
-        // Show next after 5s gap
+        // 20s gap before next — feels natural, not spammy
         const next = (i + 1) % FOMO_MESSAGES.length;
-        setTimeout(() => showNext(next), 5000);
+        setTimeout(() => showNext(next), 20000);
       }, 400);
-    }, 4500);
+    }, 5000);
   }
 
   if (!visible) return null;
